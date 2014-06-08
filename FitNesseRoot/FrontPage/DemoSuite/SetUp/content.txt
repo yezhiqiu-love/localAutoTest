@@ -1,0 +1,4 @@
+!|import                       |
+|com.junqing.qa.selenium       |
+|com.junqing.qa.selenium.xebium|
+|fitnesse.fixtures             |

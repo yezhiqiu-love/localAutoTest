@@ -1,0 +1,25 @@
+!c !3 Qing Automation Test
+!3 Functional Test Suites
+[[Demo Suite][>DemoSuite]]
+
+!3 Catalogs and Libraries
+[[Scenario Catalog][>ScenarioCatalog]]
+[[Template Library][>TemplateLibrary]]
+
+!3 Date Organize
+[[Date Organize][>DateOrganize]]
+
+!3 Bootstrap Data Suite
+[[Bootstrap Data][>BootstrapSuite]]
+
+!**> Contents
+!contents -R2 -g -f -p -h
+
+*!
+
+!**********> Configuration
+!path classes
+!path lib/*.jar
+
+!define TEST_SYSTEM {slim}
+****************!
