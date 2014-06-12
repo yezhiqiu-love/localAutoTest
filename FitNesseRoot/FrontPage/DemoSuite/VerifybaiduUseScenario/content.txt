@@ -1,0 +1,18 @@
+!*> Step implementations
+!| scenario   |Given a browser on baidu.com        |
+|start browser|firefox|on url|http://www.baidu.com/|
+|ensure       |do     |open  |on         |/        |
+
+!| scenario|when a query is done for Xebium           |
+|ensure    |do|type |on|!-//*[@id="kw1"]-!|with|Xebium|
+|ensure    |do|click|on|!-//*[@id="su1"-!]            |
+
+!| scenario|then search results should be found                                                        |
+|ensure    |do|waitForElementPresent|on|link=!-Get your webtests in FitNesse with Xebium | Xebia Blog-!|
+|stop browser                                                                                          |
+*!
+
+|script|Given a browser on baidu.com|
+|Given a browser on baidu.com       |
+|when a query is done for Xebium    |
+|then search results should be found|

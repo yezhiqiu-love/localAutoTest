@@ -1,0 +1,10 @@
+!**> Scenario Includes
+!include -c .FrontPage.ScenarioCatalog.BaiduScenario.GivenBrowserOnBaiduScenario
+!include -c .FrontPage.ScenarioCatalog.BaiduScenario.ThenSearchResultsShouldBeFoundScenario
+!include -c .FrontPage.ScenarioCatalog.BaiduScenario.WhenQueryIsDoneForXebiumScenario
+**!
+
+|script|Given a browser on baidu.com|
+|Given a browser on baidu.com       |
+|when a query is done for Xebium    |
+|then search results should be found|

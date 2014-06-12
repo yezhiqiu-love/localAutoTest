@@ -1,0 +1,9 @@
+'''Example'''
+{{{
+|script|selenium driver fixture|
+|Given a browser on baidu.com  |
+}}}
+
+!| scenario   |Given a browser on baidu.com        |
+|start browser|firefox|on url|http://www.baidu.com/|
+|ensure       |do     |open  |on         |/        |
