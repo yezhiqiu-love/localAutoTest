@@ -1,0 +1,4 @@
+|script|Db Slim Setup|!-com.mysql.jdbc.Driver-!|jdbc:mysql://localhost:3306/automation|root||
+
+|script|Db Slim Update Query|INSERT INTO student (name, class) VALUES ('james', '5 class')|
+|check |rowsUpdated;        |1                                                            |

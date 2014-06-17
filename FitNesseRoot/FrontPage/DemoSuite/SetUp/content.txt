@@ -1,4 +1,5 @@
 !|import                       |
 |com.junqing.qa.selenium       |
 |com.junqing.qa.selenium.xebium|
+|com.junqing.qa.dbslim.slim    |
 |fitnesse.fixtures             |
