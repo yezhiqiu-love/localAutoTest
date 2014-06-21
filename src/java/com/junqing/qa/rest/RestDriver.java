@@ -16,6 +16,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.codehaus.jackson.map.ObjectMapper;
 
 public class RestDriver {
 	HttpClient client = HttpClientBuilder.create().build();
@@ -25,6 +26,8 @@ public class RestDriver {
 	private String _content = "";
 	
 	private String _contentType = "";
+	
+	private HttpEntity entity;
 	
 	public void setUrl(String uri){
 		_uri =uri;
@@ -39,25 +42,23 @@ public class RestDriver {
 		
 	}
 	
-	public HttpEntity get() throws ClientProtocolException, IOException {
+	public void get() throws ClientProtocolException, IOException {
 		HttpGet httpGet = new HttpGet(_uri);
 		HttpResponse response = client.execute(httpGet);
-		HttpEntity entity = response.getEntity();
-		return entity;
+		entity = response.getEntity();
 	}
 	
-	public HttpEntity post() throws ClientProtocolException, IOException{
+	public void post() throws ClientProtocolException, IOException{
 		HttpPost httppost = new HttpPost(_uri);
 		httppost.addHeader("ContentType", _contentType);
 		httppost.setEntity(new StringEntity(_content));
 	
 		HttpResponse response = client.execute(httppost);
-		HttpEntity entity = response.getEntity();
-		return entity;
+		entity = response.getEntity();
 	}
 	
 	public String getResponse() throws IllegalStateException, ClientProtocolException, IOException{
-		InputStreamReader json = new InputStreamReader(post().getContent(),
+		InputStreamReader json = new InputStreamReader(entity.getContent(),
 				Consts.UTF_8);
 		String response = IOUtils.toString(json);
 		return response;
@@ -80,8 +81,9 @@ public class RestDriver {
 		Object object = null;
 		
 		try {
-
-			object = PropertyUtils.getProperty(getResponse(), key.trim());
+			ObjectMapper mapper = new ObjectMapper();
+			Object jsonObj = mapper.readValue(getResponse(), Object.class);
+			object = PropertyUtils.getProperty(jsonObj, key.trim());
 
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();

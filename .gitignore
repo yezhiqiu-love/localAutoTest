@@ -40,3 +40,4 @@ junk/*
 fitserverSentinel*
 tmp/*
 /classes
+/bin
