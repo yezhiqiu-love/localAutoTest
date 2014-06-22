@@ -1,0 +1,71 @@
+!2 总结
+
+此测试案例主要用于让读者熟悉脚本的标准写法。测试场景是：
+ * 先从淘宝网站用webService得到关键字“鞋”的搜索结果，并获取“鞋柜”这个词语。
+ * 把获取到的词语在百度网站上进行查询。确保有“鞋柜_最新建材家居装修效果图大全_【齐家网】”这条搜索记录。
+ * 把鞋柜这个词语更新到数据库中。
+
+
+
+!3 期望结果
+   在数据库查询中，出现鞋柜这个词语。
+
+!3 需要覆盖的测试需求
+ * 需求 1: 可以用Rest的get方法测试淘宝的WebService。
+ * 需求 2: 可以用selenium测试百度的网站页面.
+ * 需求 3: 可以测试数据库.
+
+!**> 版本信息
+初始版本：张俊卿, 2014年6月22日
+数据库查询步骤修改：刘德华 2014年14月33号。
+
+*! 
+                    
+!**> 引入Scenario
+!include -c .FrontPage.ScenarioCatalog.DatabaseScenario.CheckRowsUpdatedScenario
+!include -c .FrontPage.ScenarioCatalog.BaiduScenario.GivenBrowserOnBaiduScenario
+!include -c .FrontPage.ScenarioCatalog.BaiduScenario.ThenSearchResultsShouldBeFoundScenario
+!include -c .FrontPage.ScenarioCatalog.BaiduScenario.WhenQueryIsDoneForXebiumScenario
+**!
+
+
+
+!2 测试开始
+----
+
+
+
+!**> 数据准备 
+'''从淘宝网站用WebService查到关键字'''
+!| script     |rest driver                                                                      |
+|set url      |!-http://suggest.taobao.com/sug?code=utf-8&q=%E9%9E%8B&_ksTS=1403339180829_3173-!|
+|get                                                                                            |
+|$searchword =|get value                              |result[0][0]                             |
+
+**!
+
+'''百度搜寻此关键字'''
+!| script     |selenium driver fixture                                             |
+|start browser|firefox|on url               |http://www.baidu.com/                 |
+|ensure       |do     |open                 |on|/                                  |
+|ensure       |do     |type                 |on|!-//*[@id="kw1"]-!|with|$searchword|
+|ensure       |do     |click                |on|!-//*[@id="su1"-!]                 |
+|ensure       |do     |waitForElementPresent|on|link=鞋柜_最新建材家居装修效果图大全_【齐家网】        |
+|stop browser                                                                      |
+
+'''把此关键字插入数据库'''
+|script|Db Slim Setup|!-com.mysql.jdbc.Driver-!|jdbc:mysql://localhost:3306/automation|root||
+
+|script|Db Slim Update Query|insert into student (id,name, team,class) values (1, '测试结果-$searchword','鞋柜', '鞋柜')|
+|check |rowsUpdated;        |1                                                                                  |
+
+
+!**> 数据清除
+'''清空数据'''
+|script            |Db Slim Update Query|DELETE FROM student|
+|Check rows updated|1                                       |
+
+**!
+
+----
+!2 测试结束

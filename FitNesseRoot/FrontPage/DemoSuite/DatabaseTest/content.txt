@@ -3,6 +3,10 @@
 !define team {teamOne}
 !define class {classOne}
 
+!**> Scenario Includes
+!include -c .FrontPage.ScenarioCatalog.DatabaseScenario.CheckRowsUpdatedScenario
+**!
+
 |script|Db Slim Setup|!-com.mysql.jdbc.Driver-!|jdbc:mysql://localhost:3306/automation|root||
 
 |script|Db Slim Update Query|INSERT INTO student (id,name, team,class) VALUES (${id}, '${name}','${team}', '${class}')|
@@ -21,5 +25,11 @@
 |1                         |jerry|teamOne|classOne|
 |2                         |james|teamTwo|classOne|
 
-|script|Db Slim Update Query|DELETE FROM student|
-|check |rowsUpdated;        |2                  |
+!|script           |Db Slim Update Query|INSERT INTO student (id,name, team,class) VALUES (2, 'james','teamTwo', 'classTwo')|
+|Check rows updated|1                                                                                                       |
+
+
+|script            |Db Slim Update Query|DELETE FROM student|
+|Check rows updated|3                                       |
+
+

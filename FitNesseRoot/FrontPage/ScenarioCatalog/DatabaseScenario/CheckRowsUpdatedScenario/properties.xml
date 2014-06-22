@@ -6,8 +6,7 @@
 	<RecentChanges/>
 	<Refactor/>
 	<Search/>
-	<Suites>MustPass</Suites>
-	<Test/>
+	<Static/>
 	<Versions/>
 	<WhereUsed/>
 </properties>

@@ -6,10 +6,10 @@
 !| script|rest driver                                                                      |
 |set url |!-http://suggest.taobao.com/sug?code=utf-8&q=%E9%9E%8B&_ksTS=1403339180829_3173-!|
 |get                                                                                       |
-|check   |get value                    |tmall                          |                   |
+|check   |get value                    |tmall                          | 鞋                  |
 
 
 !| script|rest driver                                                                      |
 |set url |!-http://suggest.taobao.com/sug?code=utf-8&q=%E9%9E%8B&_ksTS=1403339180829_3173-!|
 |get                                                                                       |
-|check   |get value                    |result[0][0]                   |                   |
+|check   |get value                    |result[0][0]                   |  鞋柜                 |

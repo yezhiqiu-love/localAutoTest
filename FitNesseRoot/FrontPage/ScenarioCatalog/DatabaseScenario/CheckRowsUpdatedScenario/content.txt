@@ -1,0 +1,8 @@
+'''Example'''
+{{{
+|script            |Db Slim Update Query|
+|Check rows updated|1                   |
+}}}
+
+!| scenario|Check rows updated|line |
+|check     |rowsUpdated;      |@line|
