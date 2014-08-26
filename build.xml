@@ -243,6 +243,12 @@
 			<arg value="${results.dir}/result.xml" />
 		</java>
 </target>
+	
+	<target name="convert-fitnesse-results-to-html">
+	    <xslt in="${results.dir}/result.xml" out="${results.dir}/report.html" style="src/java/xsl/fitnesseResultsToHtmlExternal.xsl">
+	        <param expression="${baseUrl}" name="baseUrl" />
+	    </xslt>
+	</target>
 
 	<target name="retrieve" depends="resolve" description="Copy dependencies to lib/, mainly for Acceptance tests and IDE's">
 		<ivy:retrieve pattern="${lib.dir}/[artifact].[ext]" conf="standalone,default,test" />

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<suiteResults>
+  <FitNesseVersion>v20140818</FitNesseVersion>
+  <rootPath>FrontPage.DemoSuite</rootPath>
+    <pageHistoryReference>
+    <name>FrontPage.DemoSuite.DatabaseTest</name>
+    <date>08/18/2014 23:09:44</date>
+    <pageHistoryLink>FrontPage.DemoSuite.DatabaseTest?pageHistory&amp;resultDate=20140818230944</pageHistoryLink>
+    <counts>
+      <right>10</right>
+      <wrong>5</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>3735</runTimeInMillis>
+  </pageHistoryReference>
+    <pageHistoryReference>
+    <name>FrontPage.DemoSuite.StandardTest</name>
+    <date>08/18/2014 23:09:48</date>
+    <pageHistoryLink>FrontPage.DemoSuite.StandardTest?pageHistory&amp;resultDate=20140818230948</pageHistoryLink>
+    <counts>
+      <right>2</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>6</exceptions>
+    </counts>
+    <runTimeInMillis>55875</runTimeInMillis>
+  </pageHistoryReference>
+    <pageHistoryReference>
+    <name>FrontPage.DemoSuite.VerifyBaidu</name>
+    <date>08/18/2014 23:10:44</date>
+    <pageHistoryLink>FrontPage.DemoSuite.VerifyBaidu?pageHistory&amp;resultDate=20140818231044</pageHistoryLink>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>6</exceptions>
+    </counts>
+    <runTimeInMillis>49719</runTimeInMillis>
+  </pageHistoryReference>
+    <pageHistoryReference>
+    <name>FrontPage.DemoSuite.VerifyBaiduTwo</name>
+    <date>08/18/2014 23:11:34</date>
+    <pageHistoryLink>FrontPage.DemoSuite.VerifyBaiduTwo?pageHistory&amp;resultDate=20140818231134</pageHistoryLink>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>5</exceptions>
+    </counts>
+    <runTimeInMillis>48140</runTimeInMillis>
+  </pageHistoryReference>
+    <pageHistoryReference>
+-----Command Complete-----
+    <name>FrontPage.DemoSuite.VerifybaiduUseOrganizedScenario</name>
+    <date>08/18/2014 23:12:22</date>
+    <pageHistoryLink>FrontPage.DemoSuite.VerifybaiduUseOrganizedScenario?pageHistory&amp;resultDate=20140818231222</pageHistoryLink>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>7</exceptions>
+    </counts>
+    <runTimeInMillis>48468</runTimeInMillis>
+  </pageHistoryReference>
+    <pageHistoryReference>
+    <name>FrontPage.DemoSuite.VerifybaiduUseScenario</name>
+    <date>08/18/2014 23:13:10</date>
+    <pageHistoryLink>FrontPage.DemoSuite.VerifybaiduUseScenario?pageHistory&amp;resultDate=20140818231310</pageHistoryLink>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>6</exceptions>
+    </counts>
+    <runTimeInMillis>47578</runTimeInMillis>
+  </pageHistoryReference>
+    <pageHistoryReference>
+    <name>FrontPage.DemoSuite.WebServiceTest</name>
+    <date>08/18/2014 23:13:58</date>
+    <pageHistoryLink>FrontPage.DemoSuite.WebServiceTest?pageHistory&amp;resultDate=20140818231358</pageHistoryLink>
+    <counts>
+      <right>2</right>
+      <wrong>0</wrong>
+      <ignores>1</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <runTimeInMillis>188</runTimeInMillis>
+  </pageHistoryReference>
+    <finalCounts>
+    <right>1</right>
+    <wrong>1</wrong>
+    <ignores>0</ignores>
+    <exceptions>5</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>265875</totalRunTimeInMillis>
+
+</suiteResults>
