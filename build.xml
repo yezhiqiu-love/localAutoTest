@@ -224,14 +224,25 @@
 		</java>
 	</target>
 
-	<target name="acceptance_tests" depends="standalone-jar">
-		<java jar="${dist.dir}/fitnesse-standalone.jar" failonerror="true" fork="true">
+    <target name="acceptance_tests" depends="standalone-jar">
+    	<java jar="${dist.dir}/fitnesse-standalone.jar" failonerror="false" fork="true">
 			<arg value="-c" />
-			<arg value="FitNesse.SuiteAcceptanceTests?suite&amp;format=text" />
+			<arg value="FrontPage.DemoSuite?suite&amp;format=text" />
 			<arg value="-p" />
 			<arg value="9234" />
+		</java> 
+
+		<java classpath="${classes.dir}" jar="${dist.dir}/fitnesse-standalone.jar" failonerror="true" fork="true" maxmemory="256m" output="${results.dir}/result.temp">
+			<arg value="-c" />
+			<arg value="FrontPage.DemoSuite?pageHistory&amp;resultDate=latest&amp;format=xml" />
+			<arg value="-p" />
+			<arg value="9235" />
 		</java>
-	</target>
+		<java classname="com.junqing.file.utility.XmlFitNesseResultsCleaner" classpath="${classes.dir}" fork="true">
+			<arg value="${results.dir}/result.temp" />
+			<arg value="${results.dir}/result.xml" />
+		</java>
+</target>
 
 	<target name="retrieve" depends="resolve" description="Copy dependencies to lib/, mainly for Acceptance tests and IDE's">
 		<ivy:retrieve pattern="${lib.dir}/[artifact].[ext]" conf="standalone,default,test" />
