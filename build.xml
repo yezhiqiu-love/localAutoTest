@@ -249,6 +249,8 @@
 	        <param expression="${baseUrl}" name="baseUrl" />
 	    </xslt>
 	</target>
+	
+   <target name="run_jenkins_suite" depends="acceptance_tests,convert-fitnesse-results-to-html"/>
 
 	<target name="retrieve" depends="resolve" description="Copy dependencies to lib/, mainly for Acceptance tests and IDE's">
 		<ivy:retrieve pattern="${lib.dir}/[artifact].[ext]" conf="standalone,default,test" />
