@@ -8,7 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * ÔÚbuild.xmlµ÷ÓÃ´ËÀàmain·½·¨£¬´«Èë²ÎÊı£¬ÓÃÓÚ°ÑtempÎÄ¼ş×ª»»ÎªxmlÎÄ¼ş¡£
+ * åœ¨build.xmlè°ƒç”¨æ­¤ç±»mainæ–¹æ³•ï¼Œä¼ å…¥å‚æ•°ï¼Œç”¨äºæŠŠtempæ–‡ä»¶è½¬æ¢ä¸ºxmlæ–‡ä»¶ã€‚
  * @author jizhang
  *
  */

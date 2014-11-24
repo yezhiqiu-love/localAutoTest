@@ -46,6 +46,9 @@ public class RestDriver {
 		HttpGet httpGet = new HttpGet(_uri);
 		HttpResponse response = client.execute(httpGet);
 		entity = response.getEntity();
+		InputStreamReader json = new InputStreamReader(entity.getContent(),
+				Consts.UTF_8);
+		System.out.println(IOUtils.toString(json));
 	}
 	
 	public void post() throws ClientProtocolException, IOException{
@@ -66,8 +69,8 @@ public class RestDriver {
 	
 	public String getValue(String key) throws IOException {
 		/*
-		 * ÕâÒ»¶Î´úÂëÊÇÓÃÀ´¸ø²éÑ¯JsonÀïÊı×éµÄkey¼ÓÉÏĞ¡À¨ºÅµÄ¡£ÒòÎªÒª²éÑ¯Êı×é£¬
-		 * keyÒªÕâÑùĞ´(array)[0],PropertyUtils Ö»ÈÏÊ¶ÕâÑùµÄkey.
+		 * è¿™ä¸€æ®µä»£ç æ˜¯ç”¨æ¥ç»™æŸ¥è¯¢Jsoné‡Œæ•°ç»„çš„keyåŠ ä¸Šå°æ‹¬å·çš„ã€‚å› ä¸ºè¦æŸ¥è¯¢æ•°ç»„ï¼Œ
+		 * keyè¦è¿™æ ·å†™(array)[0],PropertyUtils åªè®¤è¯†è¿™æ ·çš„key.
 		 */
 		String[] keys = key.split("\\.");
 		for (int i = 0; i < keys.length; i++) {
