@@ -4,8 +4,8 @@
 |ensure       |do     |open  |on         |/        |
 
 !| scenario|when a query is done for Xebium           |
-|ensure    |do|type |on|!-//*[@id="kw1"]-!|with|Xebium|
-|ensure    |do|click|on|!-//*[@id="su1"-!]            |
+|ensure    |do|type |on|!-//*[@id="kw"]-!|with|Xebium|
+|ensure    |do|click|on|!-//*[@id="su"-!]            |
 
 !| scenario|then search results should be found                                                        |
 |ensure    |do|waitForElementPresent|on|link=!-Get your webtests in FitNesse with Xebium | Xebia Blog-!|

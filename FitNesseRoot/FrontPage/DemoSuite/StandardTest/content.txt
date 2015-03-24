@@ -48,8 +48,8 @@
 !| script     |selenium driver fixture                                             |
 |start browser|firefox|on url               |http://www.baidu.com/                 |
 |ensure       |do     |open                 |on|/                                  |
-|ensure       |do     |type                 |on|!-//*[@id="kw1"]-!|with|$searchword|
-|ensure       |do     |click                |on|!-//*[@id="su1"-!]                 |
+|ensure       |do     |type                 |on|!-//*[@id="kw"]-!|with|$searchword|
+|ensure       |do     |click                |on|!-//*[@id="su"-!]                 |
 |ensure       |do     |waitForElementPresent|on|link=鞋柜_最新建材家居装修效果图大全_【齐家网】        |
 |stop browser                                                                      |
 

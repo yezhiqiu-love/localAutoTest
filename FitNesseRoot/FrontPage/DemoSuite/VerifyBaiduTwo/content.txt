@@ -1,6 +1,6 @@
 |script       |selenium driver fixture               |
 |start browser|firefox|on url|http://www.baidu.com/  |
 |do           |open   |on    |/                      |
-|ensure       |do     |type  |on|id=kw1|with|Fitnesse|
-|ensure       |do     |click |on|id=su1              |
+|ensure       |do     |type  |on|id=kw|with|Fitnesse|
+|ensure       |do     |click |on|id=su              |
 |stop browser                                        |

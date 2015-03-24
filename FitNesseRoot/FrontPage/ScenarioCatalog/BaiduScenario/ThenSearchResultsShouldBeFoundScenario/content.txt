@@ -5,5 +5,5 @@
 }}}
 
 !| scenario|when a query is done for Xebium           |
-|ensure    |do|type |on|!-//*[@id="kw1"]-!|with|Xebium|
-|ensure    |do|click|on|!-//*[@id="su1"-!]            |
+|ensure    |do|type |on|!-//*[@id="kw"]-!|with|Xebium|
+|ensure    |do|click|on|!-//*[@id="su"-!]            |
