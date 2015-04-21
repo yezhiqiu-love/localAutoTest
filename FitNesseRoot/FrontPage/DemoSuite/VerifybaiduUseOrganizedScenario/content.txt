@@ -4,7 +4,7 @@
 !include -c .FrontPage.ScenarioCatalog.BaiduScenario.WhenQueryIsDoneForXebiumScenario
 **!
 
-|script|Given a browser on baidu.com|
+|script   |selenium driver fixture  |
 |Given a browser on baidu.com       |
 |when a query is done for Xebium    |
 |then search results should be found|

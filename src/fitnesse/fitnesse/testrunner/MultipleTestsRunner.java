@@ -77,6 +77,7 @@ public class MultipleTestsRunner implements TestSystemListener<WikiTestPage>, St
     announceTotalTestsToRun(pagesByTestSystem);
 
     for (WikiPageIdentity identity : pagesByTestSystem.identities()) {
+    	LOG.info(identity.toString());
       startTestSystemAndExecutePages(identity, pagesByTestSystem.testPagesForIdentity(identity));
     }
 
@@ -157,6 +158,7 @@ public class MultipleTestsRunner implements TestSystemListener<WikiTestPage>, St
   private void executeTestSystemPages(List<WikiPage> pagesInTestSystem, TestSystem testSystem) throws IOException, InterruptedException {
     for (WikiPage testPage : pagesInTestSystem) {
       testsInProgressCount++;
+      LOG.info(String.valueOf(testsInProgressCount++));
       testSystem.runTests(new WikiTestPage(testPage));
     }
   }
