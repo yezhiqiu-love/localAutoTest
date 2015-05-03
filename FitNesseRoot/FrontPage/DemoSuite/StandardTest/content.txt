@@ -45,13 +45,13 @@
 **!
 
 '''百度搜寻此关键字'''
-!| script     |selenium driver fixture                                             |
-|start browser|firefox|on url               |http://www.baidu.com/                 |
-|ensure       |do     |open                 |on|/                                  |
+!| script     |selenium driver fixture                                            |
+|start browser|firefox|on url               |http://www.baidu.com/                |
+|ensure       |do     |open                 |on|/                                 |
 |ensure       |do     |type                 |on|!-//*[@id="kw"]-!|with|$searchword|
 |ensure       |do     |click                |on|!-//*[@id="su"-!]                 |
-|ensure       |do     |waitForElementPresent|on|link=鞋柜_最新建材家居装修效果图大全_【齐家网】        |
-|stop browser                                                                      |
+|ensure       |do     |waitForElementPresent|on|link=鞋子女春_鞋子女春图片素材                |
+|stop browser                                                                     |
 
 '''把此关键字插入数据库'''
 |script|Db Slim Setup|!-com.mysql.jdbc.Driver-!|jdbc:mysql://localhost:3306/automation|root||
