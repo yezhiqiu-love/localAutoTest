@@ -1,6 +1,9 @@
 # [FitNesse](http://fitnesse.org/)  [![Build Status](https://travis-ci.org/unclebob/fitnesse.png)](https://travis-ci.org/unclebob/fitnesse)
 
-Welcome to FitNesse, the fully integrated stand-alone acceptance testing framework and wiki.
+欢迎来到qing-automation，这是一个自动化测试框架项目，项目详细介绍
+书：测之重器-自动化测试框架搭建指南(http://www.ituring.com.cn/minibook/10775)
+教学视频：自动化测试框架搭建指南(http://edu.51cto.com/course/course_id-3386.html)
+
 
 To get started, check out [http://fitnesse.org](http://fitnesse.org)!
 
