@@ -67,10 +67,6 @@ public class RestDriver {
 	}
 	
 	public String getValue(String key) throws IOException {
-		/*
-		 * è¿™ä¸€æ®µä»£ç �æ˜¯ç”¨æ�¥ç»™æŸ¥è¯¢Jsoné‡Œæ•°ç»„çš„keyåŠ ä¸Šå°�æ‹¬å�·çš„ã€‚å› ä¸ºè¦�æŸ¥è¯¢æ•°ç»„ï¼Œ
-		 * keyè¦�è¿™æ ·å†™(array)[0],PropertyUtils å�ªè®¤è¯†è¿™æ ·çš„key.
-		 */
 		String[] keys = key.split("\\.");
 		for (int i = 0; i < keys.length; i++) {
 			if (keys[i].contains("[")) {
