@@ -160,6 +160,7 @@ public class MultipleTestsRunner implements TestSystemListener<WikiTestPage>, St
       testsInProgressCount++;
       LOG.info(String.valueOf(testsInProgressCount++));
       testSystem.runTests(new WikiTestPage(testPage));
+      testsInProgressCount--;
     }
   }
 
