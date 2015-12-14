@@ -48,7 +48,6 @@ public class RestDriver {
 		entity = response.getEntity();
 		InputStreamReader json = new InputStreamReader(entity.getContent(),
 				Consts.UTF_8);
-		System.out.println(IOUtils.toString(json));
 	}
 	
 	public void post() throws ClientProtocolException, IOException{
@@ -68,10 +67,6 @@ public class RestDriver {
 	}
 	
 	public String getValue(String key) throws IOException {
-		/*
-		 * 这一段代码是用来给查询Json里数组的key加上小括号的。因为要查询数组，
-		 * key要这样写(array)[0],PropertyUtils 只认识这样的key.
-		 */
 		String[] keys = key.split("\\.");
 		for (int i = 0; i < keys.length; i++) {
 			if (keys[i].contains("[")) {
