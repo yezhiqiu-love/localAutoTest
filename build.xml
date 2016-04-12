@@ -230,14 +230,14 @@
     <target name="acceptance_tests" depends="standalone-jar">
     	<java jar="${dist.dir}/fitnesse-standalone.jar" failonerror="false" fork="true">
 			<arg value="-c" />
-			<arg value="FrontPage.DemoSuite?suite&amp;format=text" />
+			<arg value="FitNesse.SuiteAcceptanceTests.SuiteResponderTests.SuiteSearchResponder?suite&amp;format=text" />
 			<arg value="-p" />
 			<arg value="9234" />
 		</java> 
 
 		<java classpath="${classes.dir}" jar="${dist.dir}/fitnesse-standalone.jar" failonerror="true" fork="true" maxmemory="256m" output="${results.dir}/result.temp">
 			<arg value="-c" />
-			<arg value="FrontPage.DemoSuite?pageHistory&amp;resultDate=latest&amp;format=xml" />
+			<arg value="FitNesse.SuiteAcceptanceTests.SuiteResponderTests.SuiteSearchResponder?pageHistory&amp;resultDate=latest&amp;format=xml" />
 			<arg value="-p" />
 			<arg value="9235" />
 		</java>
